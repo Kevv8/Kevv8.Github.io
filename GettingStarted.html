@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryxel Realm</title>
+    <link  rel="stylesheet" href="style.css">
+     <style>
+    /* body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+} */
+html {
+  scroll-behavior: smooth;
+}
+
+.section h2, p , li{
+  text-align: left;
+}
+
+/* Offset fix for fixed navbar */
+section {
+  scroll-margin-top: 60px; /* Adjust based on your navbar height */
+}
+.container #spawn-npcs #white ,ul
+{
+  font-size: small;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color:#0A0D18;
+  border-radius: 8px;
+}
+.container p, li{
+  /* padding-left: 50px; */
+  font-size: medium;
+  color:grey;
+}
+h1, h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  /* padding-left: 50px; */
+}
+
+/* ul {
+  padding-left: 20px;
+} */
+/* Dropdown container */
+.nav-list li {
+  position: relative; /* Needed for absolute positioning of dropdown */
+  font-size: large;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below parent */
+  left: 0;
+  /* backdrop-filter: blur(4px); */
+  background-color: rgba(51, 51, 51, 0.85);
+  min-width: 200px;
+  border-radius: 15px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Dropdown items */
+.dropdown-content li a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #575757;
+}
+
+/* Show dropdown on hover */
+.nav-list li:hover .dropdown-content {
+  display: block;
+}
+
+ .navbar {
+  background-color: #000000;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+ 
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 15px;
+}
+.dropdown-content li 
+{
+  font-size: medium;
+}
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+} 
+
+.white { color: white; font-weight: bold;font-size: 50px; }
+.cyan { color: cyan; font-weight: bold; }
+.green { color: rgb(16, 236, 16); font-weight: bold; }
+.red { color: darkred; font-weight: bold; }
+.yellow { color: goldenrod; font-weight: bold; }
+.orange { color: orange; font-weight: bold; }
+.gold { color: gold; font-weight: bold; }
+.purple { color: purple; font-weight: bold; }
+.gray { color: gray; font-weight: bold; }
+.blue { color: deepskyblue; font-weight: bold; }
+  .collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .collage img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #444;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  .collage1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for better spacing with 5 images */
+      gap: 16px;
+      padding: 24px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .collage1 img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #444;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    #spawn-npcs li span{
+      font-size: 25px;
+      font-size: bold;
+    } 
+    .collage3 {
+      display: grid;
+      grid-template-columns: 1fr; /* Single column for one image */
+      gap: 16px;
+      padding: 24px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .collage3 img {
+      width: 90%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #444;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .container2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px; /* Space between left and right sections */
+  padding: 20px;
+  color: #fff; /* Adjust text color as needed */
+
+}
+
+.left {
+  flex: 1;
+  font-size: large;
+  line-height: 1.6;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the two images */
+}
+
+.right img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+   </style>
+</head>
+<body style="background-color: #0A0D18;">
+        <nav class="navbar">
+
+  <div class="logo">
+    <img src="Bryxl/bryxel_realm1 (1).png" alt="Logo" style="width: 100px;">
+  
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">About</a></li>
+      <li><a href="#">Guides</a>
+      <ul class="dropdown-content">
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#tavern">Tavern</a></li>
+  <li><a href="#afk-area">AFK Area</a></li>
+  <li><a href="#guilds">Creating your guild</a></li>
+  <li><a href="#land-claiming">Land Claiming</a></li>
+  <li><a href="#earning-money">Earning Money</a></li>
+  <li><a href="#player-jobs">Player Jobs</a></li>
+  <li><a href="#player-commands">Player Skills</a></li>
+<li><a href="#spawn-npcs">Spawn NPC(s)</a></li>
+      </ul></li>
+      <li><a href="staff.html">Staff</a></li>
+      <li><a href="Rank.html">Ranks</a></li>
+      <li><a href="vote.html">Vote</a></li>
+      <li><a href="donate.html" style="color: goldenrod;">Donate</a></li>
+    </ul>
+  </nav>
+  
+   <div class="image-overlay-container">
+    <!-- <img src="https://i.pinimg.com/originals/f4/bc/36/f4bc364df906c6406dafdc85ec40bf59.gif" alt="Background Image" class="background-image"> -->
+    <video autoplay muted loop id="background-video">
+  <source src="Bryxl/Sequence 01_2.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+    <div class="overlay-content" onclick="copyText()">
+      <img src="https://www.bryxelrealm.com/static/media/logo.db847865a09357defa3f.png" alt="Logo" class="logo">
+      <h1 style="color: rgb(242, 237, 237) ; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 45px;">Bryxl Realm</h1><h1 style="color: rgb(247, 244, 244);font-size: 20px;">Building friendship and memories.</h1>
+   </div>
+   </div>
+   <div class="container">
+    
+    <h1 style="text-align:left;"    class="white">Guides for Bryxel Realm</h1>
+
+    <h2 class="cyan">WORLD SIZES</h2>
+    <p><span class="green">Overworld</span> - 20,000 x 20,000</p>
+    <p><span class="red">Nether World</span> - 15,000 x 15,000</p>
+    <p><span class="yellow">End World</span> - 15,000 x 15,000</p>
+
+    <p>Players can create guilds, explore the wilderness, interact with other players using in-game voice chat, and gather resources in order to survive in a semi hostile environment. The serves uses many plugins to enhance and add features such as competitive in-game leaderboards and player driven economy and guilds.</p>
+
+    <p>Remember, avoid digging straight down, you might find yourself swimming in <span class="red">lava pool</span>.</p>
+<section id="getting-started"><br><br>
+    <h2 class="white">Getting Started</h2>
+    <p>Upon entering the survival server, you will join the spawn area, where you can find Seasonal Crates, Leaderboards, Shop, Tavern, and other NPCs to interact with!Survival is a friendly and peaceful server that does not include raiding or griefing in claimed land.
+</p>
+    <p>After exploring the spawn area, you can type <span class="orange">/kit starter</span> once to obtain some useful items to begin your survival journey. After claiming your starting items, you may type <span class="orange">/wild</span>to get teleported randomly in Overworld. To get back at spawn area, you can type <span class="green">/spawn</span>.</p>
+    <p>Players can complete jobs for money that can be used to purchase items in player auctions and shops. Players can also utilize their time to complete The <span class="gold">Battle pass</span> quests for rewards. These rewards supply you with <span class="purple">Bryxel Relics</span>, which is one of the main currencies in Survival. You can use this relic to purchase items from <span class="orange">/shop</span> which lets you buy Server cosmetic items.
+    </p></section>
+<section id="tavern"><br><br>
+    <h2 class="white">Tavern</h2>
+    <p>The Tavern is located right at our spawn point area or you can just do <span class="orange">/warp Tavern</span> in-game to get teleported at the entrance of the Tavern. Inside the tavern you may find npc's and features such as beer gamble, smithy and custom enchantments ark</p>
+       <div class="collage">
+    <img src="Tavern/Screenshot 2025-07-15 151434.png" alt="Minecraft Interior with Signs" />
+    <img src="Tavern/Screenshot 2025-07-15 151548.png" alt="Castle at Sunset" />
+    <img src="Tavern/Screenshot 2025-07-15 151630.png" alt="Purple Portal Room" />
+    <img src="Tavern/Screenshot 2025-07-15 151744.png" alt="Busy Interior with Players" />
+    <img src="Tavern/Screenshot 2025-07-15 151829.png" alt="Interior with Items and Signs" />
+    <img src="Tavern/Screenshot 2025-07-15 151849.png" alt="Nighttime Garden with Moon" />
+  </div>
+</section>
+<section id="afk-area" ><br><br>
+    <h2 class="white">AFK Area</h2>
+    <p>You can safely step away from your keyboard without getting kicked off the server. While you’re AFK in the tavern area, you’ll earn between $10 and $100 every 10 minutes!</p>
+    <p>Safe Zone: No mobs or other players can harm you while you’re here.</p>  
+    <p>Tavern Ambiance: Enjoy the cozy and lively atmosphere of the tavern while you take a break.
+</p>
+<p>Earnings: Collect in-game currency just by being here, ranging from $10 to $100 per 10 minutes.</p>
+<p>Relax and Enjoy: Take a break, grab a snack, or just chill while your in-game wallet grows!
+</p>   
+<div class="collage1">
+    <img src="AFK Area/Screenshot 2025-07-15 152521.png" alt="Minecraft Build 1" />
+    <img src="AFK Area/Screenshot 2025-07-15 152545.png" alt="Minecraft Build 2" />
+    <img src="AFK Area/Screenshot 2025-07-15 153025.png" alt="Minecraft Build 3" />
+    <img src="AFK Area/Screenshot 2025-07-15 153049.png" alt="Minecraft Build 4" />
+  </div>
+</section>
+<section id="Guilds"><br><br>
+    <h2 class="white">Guilds</h2>
+     <p>In Survival, your guild is your team. Many features like guild vaults, guild tier upgrades, guild chats, and more features that you can utilize with your friends. To create your own guild, use the command <span class="green">/guild create [name] [prefix]</span>.</p>
+  <p>Creating a guild costs <span class="gold">10,000 in-game money</span>. If you choose to create your own guild, it is advised that you read the guild command list by using the command <span class="orange">/guilds</span>.</p>
+<p>If you would like to play with other players, you can invite them to your guild by using the command <span class="green">/guild invite [username]</span> and the invited player must accept the guild invitation by doing  <span class="green">/guild accept [guild_name]</span>
+</p>  
+</section>
+<section id="land-claiming"><br><br>
+    <h2 class="white">Land Claiming</h2>
+   <p>Most players build their bases in the Overworld. You can use the golden shovel to claim a land to protect your base. You can get the free claiming tools by doing <span class="orange">/kit claim</span> and if you still don’t know how to claim a land, you may want to check out the video tutorial on how to claim a land using golden shovel at <a href="#" ><span class="gray">bit.ly/mcgpuser</span></a></p>
+
+<p>After settling down and claiming your first land claims, it is recommended that you set a home at that location with <span class="green">/sethome [home_name]</span> so you do not lose it. You can use <span class="orange">/homes</span> to view all of your set homes, and <span class="green">/home [home_name]</span> to teleport to a specific one.</p>
+
+<p>A new player have a free one sethome limit, you can get more sethomes by ranking up at [/ranks] (Orange color + Bold ) . If you want to delete your homes, you can use <span class="green">/delhome [home_name]</span> to delete an specific home and set a new one.</p>
+</section>
+<section id="earning-money"><br><br>
+    <h2 class="white">Earning Money</h2>
+    <p>As you may be able to tell, Survival is a vast realm with a wide variety of features. This means, you can make money in many different ways, such as:</p>
+    <ul>
+      <li> Complete Jobs : <span class="orange">/jobs</span></li>
+      <li>Selling items to the shop :<span class="orange">/shop</span></li>
+      <li>Selling fish to Finn :<span class="orange">Finn (NPC at spawn)</span></li>
+      <li>Selling items at player auctions : <span class="orange">/ah</span></li>
+      <li>Redeeming Daily Rewards : <span class="orange">/goose</span></li>
+      <li>Tavern Gamble : <span class="orange">Tavern Gamble</span></li>
+      <li>Selling currencies or services to other players :<span class="orange">/warp ark</span></li>
+    </ul>
+    <p>While there are many ways to make money, some methods are more profitable than others. Completing Jobs, selling items to the shop, selling items to the player auctions offer better monetary gain compared to other methods.</p>
+</section>
+<section id="player-jobs"><br><br>
+    <h2 class="white">Player Jobs</h2>
+    <p>One of Survival’s core features is its <span class="orange">/jobs</span> feature, which allow players to select and complete a variety of jobs. Everyday, the jobs list in jobs interface have a daily rotation. This means, the jobs interface refresh every 24 hours and the available jobs changes.
+</p>
+    <div class="collage3">
+    <img src="Player Jobs/Screenshot 2025-07-15 151046.png" alt="Bryxel Realm – Tavern Interior" />
+  </div>
+  </section>
+<section id="selling-auction"><br><br>
+    <h2 class="white">Selling Items at Auction</h2>
+    <p>Another way to earn money is by selling items and currencies to other players through the auction house <span class="orange">/ah</span> To list an item for sale in the auction house for money, hold the item you want to sell and type  <span class="green">/ah sell [price]</span></p>
+</section>
+    <h2 class="white">Market Place</h2>
+    <p>This is a place where players are allotted plots to build their own shops to sell niche items to players, learning what is trending in the market is the way to go and sell your items to make enough profit to rent your plot!!</p>
+    <p>Avoid your shop from being demolished if you are inactive or stop maintaining the market plot.</p>
+    <p>Every month one shop is being chosen to be rewarded under the title of " Merchant of the month "</p>
+    <div class="collage">
+    <img src="Market Place/Screenshot 2025-07-17 142537.png" alt="Minecraft Interior with Signs" />
+    <img src="Market Place/Screenshot 2025-07-17 142605.png" alt="Castle at Sunset" />
+    <img src="Market Place/Screenshot 2025-07-17 142634.png" alt="Purple Portal Room" />
+    <img src="Market Place/Screenshot 2025-07-17 142653.png" alt="Busy Interior with Players" />
+    <img src="Market Place/Screenshot 2025-07-17 142727.png" alt="Interior with Items and Signs" />
+    <img src="Market Place/Screenshot 2025-07-17 142804.png" alt="Nighttime Garden with Moon" />
+  </div>
+    </section>
+<section id="player-commands"><br><br>
+    <h2 class="white">Player Skills</h2>
+    <p>One of the Server's most exciting Feature which can be accessed by doing  <span class="orange">/skills</span>, This feature lets you increase your base stats such as increased health , increased damage to Mobs / Players , increased armor durability and many more!!</p>
+    <p>The Skills levels can be increased by Grinding specific amount materials to gain Experience to level up.</p>
+    <ul>
+      <li><span class="blue">Archery</span> - Shoot Mobs or Players with a Bow to earn Archery XP
+</li>
+      <li><span class="blue">Fighting</span> - Fight Mobs or Players with a weapon to earn Fighting XP
+</li>
+      <li><span class="blue">Defense</span>  - Take damage from Mobs or Players to earn Defense XP</li>
+      <li><span class="blue">Farming</span> - Harvest Crops to earn Farming XP</li>
+      <li><span class="blue">Foraging</span> - Chop Trees to earn Foraging XP</li>
+      <li><span class="blue">Mining</span> - Mine stones or Ores to earn Mining XP
+</li>
+      <li><span class="blue">Fishing</span> - Catch Fishes to earn Fishing XP</li>
+      <li><span class="blue">Excavation</span> - Dig with a shovel to earn Excavation XP</li>
+      <li><span class="blue">Agility</span> - Move around and take fall Damage to earn Agility XP</li>
+      <li><span class="blue">Alchemy</span> - Brew and splash potions to earn Alchemy XP</li>
+      <li><span class="blue">Enchanting</span> - Enchant and grind items to earn Enchanting XP</li>
+    </ul>
+     <div class="collage3">
+    <img src="Player Skills/Screenshot 2025-07-17 145205.png"    alt="Bryxel Realm – Tavern Interior" />
+  </div>
+</section>
+<section id="spawn-npcs"><br><br>
+    <h2   class="white">Spawn NPC(s)</h2>
+    <ul>
+      <li><span  class="white">   Goose </span>– Rewards
+        <div class="container2">
+          <div class="left">
+        <p>Goose: Clicking this NPC takes you to the “Rewards” interface, where you can claim your daily, weekly, and monthly free rewards.</p>
+        </div>
+        <div class="right">
+    <img src="Spawn NPC/GOOSE/Screenshot 2025-07-15 145240.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+    <img src="Spawn NPC/GOOSE/Screenshot 2025-07-15 150936.png" alt="Bryxel Realm – Guild Hall Exterior" />
+  </div>
+  </div>
+      </li>
+      <li><span class="white">   Bryx </span>– Shop
+        <div class="container2">
+          <div class="left">
+        <p>Bryx : Clicking this NPC takes you to the “Shop” interface, where you can Buy Ranks and cosmetics.</p>
+        </div>
+        <div class="right">
+        <img src="Spawn NPC/BRYX/Screenshot 2025-07-15 145313.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+        <img src="Spawn NPC/BRYX/Screenshot 2025-07-15 151030.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white">   Jobs </span> – Join jobs
+        <div class="container2">
+          <div class="left">
+        <p>Jobs: Clicking this NPC takes you to the “Jobs” interface, where you can join 3 jobs and complete quests for progress to receive money.</p>
+        </div>
+        <div class="right">
+        <img src="Spawn NPC/JOBS/Screenshot 2025-07-15 145405.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+        <img src="Spawn NPC/JOBS/Screenshot 2025-07-15 151046.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white">   Finn </span> – Sell fish
+        <div class="container2">
+          <div class="left">
+        <p>Finn: Clicking this NPC takes you to the “Fishing” interface, where you can sell your fish for money.
+</p>
+        </div>
+        <div class="right">
+          <img src="Spawn NPC/FINN/Screenshot 2025-07-15 145507.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+    <img src="Spawn NPC/FINN/Screenshot 2025-07-15 151106.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white">  Leaderboards </span> – Track progress
+        <div class="container2">
+          <div class="left">
+        <p>Leaderboards: Clicking this NPC takes you to the “Leaderboard” interface, where you can track your progress and compete to reach the top for Monthly Legends Rewards and earn exclusive badges for milestones.</p>
+        </div>
+        <div class="right">
+          <img src="Spawn NPC/LEADERBOARDS/Screenshot 2025-07-15 145556.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+    <img src="Spawn NPC/LEADERBOARDS/Screenshot 2025-07-15 151131.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white">  Carpenter </span>  – Craft furniture
+        <div class="container2">
+          <div class="left">
+        <p>Carpenter: Clicking this NPC takes you to the "Furniture" interface, where you can craft unique custom furniture to make your are look more lively.</p>
+        </div>
+        <div class="right">
+          <img src="Spawn NPC/CARPENTER/Screenshot 2025-07-15 145642.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+    <img src="Spawn NPC/CARPENTER/Screenshot 2025-07-15 151148.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white">  Smithy</span>  – Craft armor cosmetics
+        <div class="container2">
+          <div class="left">
+        <p>Smithy: Clicking this NPC takes you to the "Smithing" interface, where you can craft unique armor cosmetics using materials acquired from dungeons or world drops.</p>
+        </div> 
+        <div class="right"> 
+        <img src="Spawn NPC/SMITHY/Screenshot 2025-07-15 145744.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+        <img src="Spawn NPC/SMITHY/Screenshot 2025-07-15 151204.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white">  Adventurer </span>  – Enter dungeons
+        <div class="container2">
+          <div class="left">
+        <p>Adventurer: Clicking this NPC takes you to the "Dungeon" interface, where you can buy keys using your money to enter into specific dungeons.</p>
+        </div>
+        <div class="right">
+          <img src="Spawn NPC/ADVENTURER/Screenshot 2025-07-15 145826.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+    <img src="Spawn NPC/ADVENTURER/Screenshot 2025-07-15 151221.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white">  Bartender </span>  – Gamble with beer
+        <div class="container2">
+          <div class="left">
+        <p>Bartender: Clicking this NPC takes you to the "gambling" interface, where you can test your luck buying various beer bottles and drinking them to get a chance to double your money</p>
+        </div>
+        <div class="right">
+          <img src="Spawn NPC/BARTENDER/Screenshot 2025-07-15 145844.png" alt="Bryxel Realm – Cozy Tavern Interior" />
+    <img src="Spawn NPC/BARTENDER/Screenshot 2025-07-15 151238.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+      <li><span class="white"> Guilds </span> – Form or join guilds
+        <div class="container2">
+          <div class="left">
+        <p>Guilds: Clicking this NPC takes you to the "Guilds" interface, where you can form or join Guilds to your liking.</p>
+        </div>
+        <div class="right">
+          <img src="Spawn NPC/GUILDS/Screenshot 2025-07-15 150342.png "alt="Bryxel Realm – Cozy Tavern Interior" />
+    <img src="Spawn NPC/GUILDS/Screenshot 2025-07-15 151258.png" alt="Bryxel Realm – Guild Hall Exterior" />
+</div>
+</div>
+      </li>
+    </ul>
+    </section>
+  </div>
+   <div class="footer">
+  <span>© 2025 <span class="highlight">Bryxel Realm</span>. All Rights Reserved.</span>
+  <div class="footer-icons">
+    <a href="https://www.facebook.com/bryxelmc/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+      <a href="https://discord.gg/5aGHGTsvPF"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord" /></a>
+     </div>
+</div>
+
+</body>
+</html>
